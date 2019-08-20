@@ -4,19 +4,30 @@ public class Clouds {
 
     static int jumpingOnClouds(int[] c) {
         int jumpNum = 0;
+        int cumulusSeq = 0;
 
-        int oneStepBack = 0;
-        int twoStepBack = 0;
+        for (int cumulus : c) {
+            if (cumulus == 1) {
+                if (cumulusSeq > 2) {
+                    int jump = cumulusSeq / 2;
+                    jumpNum = jumpNum - jump;
+                }
+                cumulusSeq = 0;
+            }
+            if (cumulus == 0) {
+                cumulusSeq++;
+                jumpNum++;
+            }
 
-
-        for (int cloud: c) {
-            if (cloud == 0 && oneStepBack == 0 && twoStepBack == 1){ jumpNum++; twoStepBack = oneStepBack; oneStepBack = cloud;}
-            else if (cloud == 0 && oneStepBack == 1) {jumpNum++; twoStepBack = oneStepBack; oneStepBack = cloud;}
-            else if (cloud == 1){twoStepBack = oneStepBack; oneStepBack = cloud;}
 
         }
 
-        return jumpNum;
-    }
+        if (cumulusSeq > 2) {
+            int jump = cumulusSeq / 2;
+            jumpNum = jumpNum - jump;
+        }
 
+
+        return jumpNum ;
+    }
 }
