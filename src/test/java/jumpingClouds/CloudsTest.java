@@ -12,9 +12,13 @@ public class CloudsTest {
     @org.junit.Test
     public void jumpingOnClouds() {
 
-        int actual = Clouds.jumpingOnClouds(given1);
-        int expected = 3;
-        assertEquals(expected, actual);
+        int actual1 = Clouds.jumpingOnClouds(given1);
+        int actual2 = Clouds.jumpingOnClouds(given2);
+        int actual3 = Clouds.jumpingOnClouds(given3);
+        int expected1 = 3;
+        assertEquals(expected1, actual1);
+        assertEquals(4, actual2);
+        assertEquals(9, actual3);
 
 
     }
