@@ -9,21 +9,30 @@ public class Diagonals {
         int sum1 = 0;
         int sum2 = 0;
 
-        for (List<Integer> list: arr) {
-            if (list.size() == 0){
-                list.add(0);
-                list.add(0);
-            }
-            if (list.size() == 1){
-                list.add(0);
-            }
+        int rows = arr.size();
+        arr = complete(arr, rows);
+
+
+        for (int i = 0; i < rows; i++) {
+            sum1 = sum1 + arr.get(i).get(i);
         }
 
-        sum1 = arr.get(0).get(0) + arr.get(1).get(1) + arr.get(2).get(2);
-        sum2 = arr.get(2).get(0) + arr.get(1).get(1) + arr.get(0).get(2);
+        for (int i = 0; i < rows ; i++) {
+            sum2 = sum2 + arr.get(rows - 1 - i).get(i);
+        }
+
 
         absoluteDifference = sum1 - sum2;
         return Math.abs(absoluteDifference);
+    }
+
+    public static List<List<Integer>> complete(List<List<Integer>> arr, int rows) {
+        for (List<Integer> list : arr) {
+            while (list.size() == rows) {
+                list.add(0);
+            }
+        }
+        return arr;
     }
 
 
