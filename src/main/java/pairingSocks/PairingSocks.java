@@ -4,6 +4,9 @@ import java.util.*;
 
 public class PairingSocks {
 
+
+
+
     static int sockMerchant(int n, int[] ar) {
         int numOfPair = 0;
 
