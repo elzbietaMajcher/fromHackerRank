@@ -6,12 +6,13 @@ public class CalculateFractions {
 
 
     static void plusMinus(int[] arr) {
+
         double denominator = arr.length;
         double positive = 0;
         double negative = 0;
         double zero = 0;
 
-        for (int val: arr) {
+        for (int val : arr) {
             if (val > 0) positive++;
             if (val < 0) negative++;
             if (val == 0) zero++;
@@ -33,10 +34,28 @@ public class CalculateFractions {
 
     }
 
-    static double calculateFraction (double numerator, double denominator){
-        double result = numerator/denominator;
+    static double calculateFraction(double numerator, double denominator) {
+        double result = numerator / denominator;
 
         return result;
+    }
+
+
+    static void staircase(int n) {
+
+        for (int i = 1; i <= n; i++) {
+            StringBuilder sb = new StringBuilder();
+            for (int j = 1; j <= n - i ; j++) {
+                sb.append(" ");
+            }
+            for (int j = n-i; j < n ; j++) {
+                sb.append("#");
+            }
+
+            System.out.println(sb);
+
+        }
+
     }
 
 }
