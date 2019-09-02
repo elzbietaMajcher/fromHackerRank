@@ -25,6 +25,7 @@ public class OrangeAppleTest {
         int resultApples = OrangeApple.calculate(s,t,a,apples);
         int resultOranges= OrangeApple.calculate(s,t,b,oranges);
 
+        assertEquals(appleExp, resultApples);
         assertEquals(orangeExp, resultOranges);
     }
 }

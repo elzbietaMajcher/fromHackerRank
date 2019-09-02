@@ -10,11 +10,12 @@ public class OrangeApple {
         System.out.println(orange);
     }
 
-    static int calculate(int s, int t, int tree, int [] position){
+    static int calculate(int s, int t, int tree, int [] fruits){
         int sum = 0;
-
-
-
+        for (int fruit: fruits) {
+            int realLocation = tree + fruit;
+            if (realLocation >= s && realLocation <= t ) sum++;
+        }
         return sum;
     }
 
